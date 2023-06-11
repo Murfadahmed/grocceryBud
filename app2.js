@@ -157,7 +157,7 @@ const deleteFunc = (uid) => {
     localStorage.setItem('myList', JSON.stringify(EmptyItemStore));
     itemUl.innerHTML = EmptyItemStore.join(" ")
 
-    alertFunc(`${EmptyItemStore.splice(findIndexNum, 1)}  this item is deleted into your list`)
+    alertFunc(`one item is deleted into your list`)
 
     // alert(`${EmptyItemStore[0]}`)
 }
