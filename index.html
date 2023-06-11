@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,38 @@
     <title>Grossery bud</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-    <div class="container">
-        <label for="inputTodo"></label>
-        <input type="text" name="inputTodo" class="input">
-        <button class="submit">Add</button>
-
+    <div class="overlay hidden"></div>
+    <div class="modal hidden">
+        <input type="text" class="editInput">
+        <button onclick="modalEditFoo(editUid)" class="doneEdit">done</button>
     </div>
-    <div class="container02">
-        <ul class="itemUl">
+    
+    <div class="main">
+        <div class="container">
 
-        </ul>
-        <button  onclick="clearAll(this)" class="clearAll">clearAll</button>
+            <div class="container01">
+                <p class="alert hidden">your item is deleted</p>
+                <input type="text" name="inputTodo" class="input">
+                <button class="submit">Add</button>
+                <!-- <button class="edit hidden">Update</button> -->
+                
+            </div>
+            <div class="container02">
+                <ol class="itemUl">
+                     <!-- <li>
+                        <P>murfad</P>
+                        <button class="delete">Delete</button>
+                        <button class="edited">Edit</button>
+                    </li>  -->
+                </ol>
+                <button  class="clearAll hidden">clearAll</button>
+            </div>
+        </div>
+        <script src="app2.js"></script>
+       <!-- <script src="app.js"></script> -->
     </div>
-    <script src="app.js"></script>
 </body>
+
 </html>
