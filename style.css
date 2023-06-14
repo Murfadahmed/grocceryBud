@@ -6,8 +6,10 @@
 
 body {
     display: flex;
-
-
+    background-image: url(https://images.unsplash.com/photo-1579294800821-694d95e86143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80);
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 .main {
@@ -15,8 +17,9 @@ body {
     background-attachment: fixed;
     background-repeat: repeat;
     background-size: cover;
+    background-color: #3d4bcb;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -47,9 +50,9 @@ body {
 }
 
 .overlay {
-    background-color: blue;
+    background-color: rgb(0, 191, 197);
     position: absolute;
-    opacity: 0.2;
+    opacity: 0.9;
     top: 0;
     bottom: 0;
     left: 0;
@@ -58,19 +61,76 @@ body {
 }
 
 .modal {
-    border: 2px solid;
+    /* border: 2px solid; */
     position: relative;
-    top: 20rem;
+    top: 10rem;
     left: 35rem;
     right: 0;
     bottom: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 19rem;
     height: 9rem;
     z-index: 1111;
 
+}
+
+.editInput {
+    width: 30rem;
+    height: 2.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid gainsboro;
+    text-align: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: black;
+    text-shadow: 0 0 15px rgb(115, 4, 102), 0 0 25px rgb(0, 0, 112);
+    animation: input 2s linear 0s infinite;
+}
+
+@keyframes input {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    25% {
+        filter: hue-rotate(90deg);
+    }
+
+    50% {
+        filter: hue-rotate(180deg);
+    }
+
+    75% {
+        filter: hue-rotate(270deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+
+}
+
+.doneEdit {
+    font-size: 2.2rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: rgb(1, 1, 1);
+    /* padding:0.5rem 0.5rem 0.1rem 0.5rem ; */
+    /* height: 2.5rem; */
+    /* transition: all 0.5s linear; */
+    /* box-shadow: 4px 5px 15px 6px rgb(49, 34, 16); */
+
+}
+
+.doneEdit p {
+    font-size: 1rem;
+    font-weight: bolder;
 }
 
 .heading {
@@ -155,23 +215,22 @@ body {
 }
 
 .submit {
-    padding: 0.6rem;
-    text-transform: uppercase;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    letter-spacing: 0.2rem;
+    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+    font-size: 1.2rem;
     border: 0.01rem solid;
     cursor: pointer;
     border-radius: 0.3rem;
-    background-color: transparent;
+    background-color: black;
+    color: lightcyan;
     transition: all 0.5s linear;
     box-shadow: 4px 5px 15px 6px rgb(49, 34, 16);
-    margin: -30px 0 0 30px;
-
+    height: 2.5rem;
 }
 
 .submit:hover {
-    background-color: transparent;
-    color: white;
+    background-color: white;
+    color: rgb(0, 0, 0);
+
 }
 
 .container02 {
@@ -180,29 +239,68 @@ body {
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: start;
     margin-top: 2.2rem;
-    margin-left: 4.2rem;
+    /* margin-left: 4.2rem; */
 }
 
 .itemUl li {
     width: 35rem;
     height: 60px;
-    background-color:li;
-    margin: 20px;
-    padding:  0rem 0rem 0rem 2.2rem ;
+    background-color: transparent;
+    margin-top: 1.5rem;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     /* align-items: center; */
+    justify-content: space-between;
     font-size: 25px;
-    color: whitesmoke ;
+    color: whitesmoke;
+   
     text-shadow: 0 0 15px rgb(5, 0, 54), 0 0 25px rgb(17, 2, 0);
     box-shadow: 0 0 15px rgb(5, 0, 54), 0 0 25px rgb(17, 2, 0);
 }
 
 
-.delete{
-    font-size: 10px;
+.delete,
+.edited {
+    font-size: 1.3rem;
+    background-color: transparent;
+    border: none;
+    color: lightcyan;
+
+}
+
+.btnDiv {
+    margin: 0.8rem 1.2rem 0 0;
+}
+
+.itemUl li p {
+    margin: 0.8rem 0 0 1.2rem;
+    text-align: center;
+    text-shadow: 0 0 25px red, 0 0 25px yellow;
+    animation: para 1.5s linear infinite;
+}
+
+@keyframes para {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(180deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.clearAll {
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    color: lightcyan;
 }

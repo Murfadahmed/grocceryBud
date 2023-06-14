@@ -46,6 +46,7 @@ let EmptyItemStore = JSON.parse(localStorage.getItem('myList')) || []
 
 // console.log(EmptyItemStore);
 
+
 itemUl.innerHTML = EmptyItemStore.join(" ")
 
 //yahan alert wala para k leye funtionaly bana i hai
@@ -65,7 +66,7 @@ const alertFunc =(alertData)=>{
 
 const editFunc = (uId) => {
     
-    console.log("Edit chal raha hai", editUid)
+    // console.log("Edit chal raha hai", uid)
 
     editUid = uId
 
@@ -83,7 +84,7 @@ const editFunc = (uId) => {
     
     modalInput.value = filteredData[0].querySelector('p').innerText
     
-    console.log(modalInput.value);
+    // console.log(modalInput.value);
 
      modal.classList.remove('hidden')
     overlay.classList.remove('hidden')
@@ -96,16 +97,16 @@ const  modalEditFoo = (uniqueId) => {
 
     
 
-    console.log(modalInput.value)
+    // console.log(modalInput.value)
     const findIndex =  EmptyItemStore.findIndex((eachItem)=> eachItem.includes(editUid))
     
-    console.log(findIndex);
+    // console.log(findIndex);
 
     EmptyItemStore.splice(findIndex ,1 , ` <li id="${uniqueId}">
     <P>${modalInput.value}</P>
     <div class="btnDiv">
-    <button class="delete" onclick="deleteFunc(${uniqueId})"><i class="fa-sharp fa-light fa-trash fa-shake"></i></button>
-        <button class="edited"  onclick="editFunc(${uniqueId})">Edit</button>
+    <button class="edited"  onclick="editFunc(${uniqueId})"><i class="fa-regular fa-pen-to-square"></i></button>
+    <button class="delete" onclick="deleteFunc(${uniqueId})"><i class="fa-solid fa-trash-can"></i></button>
         </div>
         </li>`)
         
@@ -114,7 +115,7 @@ const  modalEditFoo = (uniqueId) => {
 
         itemUl.innerHTML = EmptyItemStore.join(" ");
         
-        console.log(modalInput.value)
+        // console.log(modalInput.value)
                 hiddenModal()
     }
 
@@ -122,7 +123,7 @@ const  modalEditFoo = (uniqueId) => {
 const hiddenModal = () => {
 
 
-     console.log(modalInput.value)
+    //  console.log(modalInput.value)
 
 
      modal.classList.add('hidden')
@@ -180,18 +181,18 @@ const addFunction = () => {
 
     // console.log(uniqueId);
 
-    console.log(input.value);
+    // console.log(input.value);
 
     // alert(`${input.value} is insert in list`)
 
     const insretData = ` <li id="${uniqueId}">
     <P>${input.value}</P>
     <div class="btnDiv">
-    <button class="delete" onclick="deleteFunc(${uniqueId})"><i class="fa-sharp fa-light fa-trash "></i></button>
-   <button class="edited"  onclick="editFunc(${uniqueId})">Edit</button>
+    <button class="edited"  onclick="editFunc(${uniqueId})"><i class="fa-regular fa-pen-to-square"></i></button>
+    <button class="delete" onclick="deleteFunc(${uniqueId})"><i class="fa-solid fa-trash-can"></i></button>
    </div>
-</li>`
-    EmptyItemStore.push(insretData)
+</li>`;
+    EmptyItemStore.push(insretData);
 
     itemUl.innerHTML = EmptyItemStore.join(" ")
 
@@ -199,24 +200,26 @@ const addFunction = () => {
 
     // console.log(insretData);
 
-
-    
-    clearAll.classList.remove('hidden')
-    
     // console.log(EmptyItemStore);
     alertFunc(`${input.value}  is added in your list`)
     
     input.value = ""
-
+    clearAll.classList.remove('hidden')
 }
 
 //yahan all item clear function chalaya hai
 const ClearAllItem = () => {
+
     itemUl.innerHTML = ``
     EmptyItemStore = []
     localStorage.setItem('myList', JSON.stringify(EmptyItemStore));
-
     alertFunc('your list is Empty Now!')
+    clearAll.classList.add('hidden')   
+    // if(EmptyItemStore = [] && itemUl.innerHTML == ``){
+    // }
+    // else{
+    //     clearAll.classList.remove('hidden')
+    // }
 }
 
 
