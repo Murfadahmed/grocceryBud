@@ -56,7 +56,7 @@ const alertFunc =(alertData)=>{
 
         setTimeout(()=>{
             alertpara.style.visibility = 'hidden'
-        }, 1500)
+        }, 2500)
 }
 
 // YAHAN hum ney edit k leye functionalityt ki hai
@@ -103,8 +103,10 @@ const  modalEditFoo = (uniqueId) => {
 
     EmptyItemStore.splice(findIndex ,1 , ` <li id="${uniqueId}">
     <P>${modalInput.value}</P>
-    <button class="delete" onclick="deleteFunc(${uniqueId})">Delete</button>
+    <div class="btnDiv">
+    <button class="delete" onclick="deleteFunc(${uniqueId})"><i class="fa-sharp fa-light fa-trash fa-shake"></i></button>
         <button class="edited"  onclick="editFunc(${uniqueId})">Edit</button>
+        </div>
         </li>`)
         
         
@@ -168,7 +170,7 @@ const addFunction = () => {
     // console.log("chal raha hai")
 
     if (input.value === '') {
-        alert("bhai kuch to kr ");
+       alertFunc(`kuch to likh le bhai !!`)
 
         return
     }
@@ -184,8 +186,10 @@ const addFunction = () => {
 
     const insretData = ` <li id="${uniqueId}">
     <P>${input.value}</P>
-    <button class="delete" onclick="deleteFunc(${uniqueId})">Delete</button>
+    <div class="btnDiv">
+    <button class="delete" onclick="deleteFunc(${uniqueId})"><i class="fa-sharp fa-light fa-trash "></i></button>
    <button class="edited"  onclick="editFunc(${uniqueId})">Edit</button>
+   </div>
 </li>`
     EmptyItemStore.push(insretData)
 

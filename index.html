@@ -6,40 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grossery bud</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div  class="overlay hidden"></div>
+    <div class="overlay hidden"></div>
     <div class="modal hidden">
         <input type="text" class="editInput">
         <button onclick="modalEditFoo(editUid)" class="doneEdit">done</button>
     </div>
-    
+
     <div class="main">
+        <div class="heading">
+            <ul>
+                <li>
+                    <div>T</div>
+                </li>
+                <li>
+                    <div>O</div>
+                </li>
+                <li>
+                    <div>D</div>
+                </li>
+                <li>
+                    <div>O</div>
+                </li>
+                <div></div>
+                <li>
+                    <div>L</div>
+                </li>
+                <li>
+                    <div>I</div>
+                </li>
+                <li>
+                    <div>S</div>
+                </li>
+                <li>
+                    <div>T</div>
+                </li>
+            </ul>
+        </div>
         <div class="container">
 
             <div class="container01">
                 <p class="alert hidden">your item is deleted</p>
                 <input type="text" name="inputTodo" class="input">
                 <button class="submit">Add</button>
-                <!-- <button class="edit hidden">Update</button> -->
-                
             </div>
             <div class="container02">
                 <ol class="itemUl">
-                     <!-- <li>
+                    <i class="fa-sharp fa-light fa-trash fa-shake"></i>
+                    <!-- <li>
                         <P>murfad</P>
+                        <div class="btnDiv">
                         <button class="delete">Delete</button>
                         <button class="edited">Edit</button>
+                        </div>
                     </li>  -->
                 </ol>
-                <button  class="clearAll hidden">clearAll</button>
+                <button class="clearAll hidden">clearAll</button>
             </div>
         </div>
     </div>
-        <script src="app2.js"></script>
-       <!-- <script src="app.js"></script> -->
+    <script src="app2.js"></script>
+    <!-- <script src="app.js"></script> -->
 </body>
 
 </html>
